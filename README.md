@@ -17,12 +17,9 @@ git clone https://github.com/jimmybombimmy/dotfiles ~/.dotfiles
 ```
 
 3. Create symlinks in the Home directory to the real files in the repo.
+**Make sure you are in this .dotfiles folder**
 ```bash
-# There are better and less manual ways to do this;
-# investigate install scripts and bootstrapping tools.
-
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+sudo stow . --ignore='./README.md' --ignore './.git' --ignore='./.DS_Store'
 ```
 
 4. Install Homebrew, followed by the software listed in the Brewfile.
