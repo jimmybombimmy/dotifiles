@@ -7,7 +7,11 @@
 ```bash
 xcode-select --install
 ```
+
 2. Clone repo into new hidden directory.
+
+**Note** Make sure this directory is in the same directory as other dotfile directorys (such as .oh-my-zsh)
+
 ```bash
 # Use SSH (if set up)...
 git clone git@github.com:jimmybombimmy/dotfiles ~/.dotfiles
@@ -16,13 +20,7 @@ git clone git@github.com:jimmybombimmy/dotfiles ~/.dotfiles
 git clone https://github.com/jimmybombimmy/dotfiles ~/.dotfiles
 ```
 
-3. Create symlinks in the Home directory to the real files in the repo.
-**Make sure you are in this .dotfiles folder**
-```bash
-sudo stow . --ignore='./README.md' --ignore './.git' --ignore='./.DS_Store'
-```
-
-4. Install Homebrew, followed by the software listed in the Brewfile.
+3. Install Homebrew, followed by other software
 ```bash
 # These could also be in an install script.
 
@@ -31,7 +29,16 @@ sudo stow . --ignore='./README.md' --ignore './.git' --ignore='./.DS_Store'
 
 # Then pass in the Brewfile location...
 brew bundle --file ~/.dotfiles/Brewfile
+```
 
-# ...or move to the directory first.
-cd ~/.dotfiles && brew bundle
+4. Install other software that could not be installed in the Brewfile
+
+```bash
+sh non-brewfile.sh
+```
+
+5. Create symlinks in the Home directory to the real files in the repo.
+**Make sure you are in this .dotfiles folder**
+```bash
+sh stow.sh
 ```
