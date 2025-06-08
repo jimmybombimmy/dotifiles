@@ -17,7 +17,7 @@ if [[ "$(pwd)" =~ \.dotfiles$ ]]; then
   if [[ "$ignore_count" -eq "$dont_copy_length" ]]; then
     echo running stow script: $stow_script
     $stow_script
-    cp ./oh-my-zsh/lambda-hl.zsh-theme ../.oh-my-zsh/themes
+    cp ./oh-my-zsh/themes/lambda-hl.zsh-theme $HOME/.oh-my-zsh/themes
   fi
 
 

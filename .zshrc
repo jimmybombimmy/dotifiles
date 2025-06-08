@@ -13,7 +13,7 @@ ZSH_THEME="lambda-hl"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -103,6 +103,9 @@ PATH="$PATH:/Users/cex/Documents/Programming/flutter/bin/"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 
 
@@ -112,7 +115,7 @@ slow_echo_orange() {
   printf "\e[38;5;208m"  # Orange
   for ((i=0; i<${#text}; i++)); do
     printf "%s" "${text:$i:1}"
-    sleep 0.015
+    sleep 0.01
   done
   printf "\e[0m\n"  # Reset color
 }
@@ -151,23 +154,14 @@ cat << "EOF"
 EOF
 echo -e 
 
-sleep 0.5
-slow_echo_orange .
-sleep 0.5
-printf "\033[1A\033[2K"
-slow_echo_orange ..
-sleep 0.5
-printf "\033[1A\033[2K"
-slow_echo_orange ...
-printf "\033[1A\033[2K"
-sleep 0.5
+sleep 0.3
 
 
 
 slow_echo_orange "> Welcome to the Black Mesa Research Facility"
-sleep 1
-slow_echo_orange "> Status: █ ONLINE █ "
 sleep 0.5
+slow_echo_orange "> Status: █ ONLINE █ "
+sleep 0.3
 slow_echo_orange "> Clearance: █ LEVEL 3 █"
-sleep 0.7
+sleep 0.3
 slow_echo_orange "> Welcome, Dr. Freeman."

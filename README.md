@@ -42,3 +42,17 @@ sh non-brewfile.sh
 ```bash
 sh stow.sh
 ```
+This will also install any themes and everything else
+
+### Copying from your machine to this repo
+
+You can copy over dotfiles from your machine to this repo with this command
+```bash
+sh migrate-here.sh
+```
+
+For now, this has brew installed 
+
+# To Do: 
+- Find more Brewfiles to install
+- Copy over workplace oh-my-zsh extensions
